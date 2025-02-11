@@ -22,6 +22,13 @@
             font-weight: bold;
         }
 
+        header img {
+            width: 150px;
+            height: auto;
+            display: block;
+            margin: 0 auto 10px auto;
+        }
+
         .product {
             display: flex;
             justify-content: center;
@@ -45,10 +52,10 @@
 
         /* Slideshow Container */
         .slideshow-container {
-            display: flex; /* Enable flexbox on the container */
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically */
-            position: relative; /* Needed for absolute positioning of the image */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
             width: 250px;
             height: 200px;
             overflow: hidden;
@@ -56,12 +63,12 @@
 
         /* Image Slides */
         .slide {
-            position: absolute; /* Needed for slideshow and to work with flexbox centering */
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Or contain, depending on your needs */
+            object-fit: cover;
             opacity: 0;
             transition: opacity 1s ease-in-out;
         }
@@ -98,6 +105,7 @@
 <body>
 
     <header>
+        <img src="logo.png" alt="OMI'S CREATIONS Logo">
         <h1>🌸 OMI'S CREATIONS 🌸</h1>
         <p>✨ Trendy Bows, Butterflies, and Scrunchies ✨</p>
         <p>💖 Upgrade your style with our elegant collection! 💖</p>
@@ -128,7 +136,6 @@
                 <img class="slide bigbow-slide" src="bigbow3.jpeg" alt="Big Bow 3">
                 <img class="slide bigbow-slide" src="bigbow4.jpeg" alt="Big Bow 4">
                 <img class="slide bigbow-slide" src="bigbow5.jpeg" alt="Big Bow 5">
-                
             </div>
             <h2>Big Bows</h2>
             <p>Rs. 150 🎀</p>
@@ -141,7 +148,6 @@
                 <img class="slide smallbow-slide" src="smallbow2.jpeg" alt="Small Bow 2">
                 <img class="slide smallbow-slide" src="smallbow3.jpeg" alt="Small Bow 3">
                 <img class="slide smallbow-slide" src="smallbow4.jpeg" alt="Small Bow 4">
-            
             </div>
             <h2>Small Bows</h2>
             <p>Rs. 100 🎀</p>
