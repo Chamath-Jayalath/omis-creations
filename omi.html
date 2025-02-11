@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OMI'S CREATIONS</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #A1D8D3;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(135deg, #A7C7E7, #A1D8D3);
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .product {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+            width: 250px;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        /* Slideshow Container */
+        .slideshow-container {
+            display: flex; /* Enable flexbox on the container */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            position: relative; /* Needed for absolute positioning of the image */
+            width: 250px;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        /* Image Slides */
+        .slide {
+            position: absolute; /* Needed for slideshow and to work with flexbox centering */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Or contain, depending on your needs */
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .contact {
+            margin-top: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, #05aea3, #0af4bd);
+            color: white;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: white;
+            padding: 12px 25px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .whatsapp-btn img {
+            width: 25px;
+            height: 25px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🌸 OMI'S CREATIONS 🌸</h1>
+        <p>✨ Trendy Bows, Butterflies, and Scrunchies ✨</p>
+        <p>💖 Upgrade your style with our elegant collection! 💖</p>
+    </header>
+    
+    <section class="product">
+
+        <!-- Butterflies -->
+        <div class="card">
+            <div class="slideshow-container">
+                <img class="slide butterfly-slide" src="butterfly1.jpeg" alt="Butterfly 1">
+                <img class="slide butterfly-slide" src="butterfly2.jpeg" alt="Butterfly 2">
+                <img class="slide butterfly-slide" src="butterfly3.jpeg" alt="Butterfly 3">
+                <img class="slide butterfly-slide" src="butterfly4.jpeg" alt="Butterfly 4">
+            </div>
+            <h2>Butterflies</h2>
+            <p>Rs. 250 🦋</p>
+        </div>
+
+        <!-- Big Bows -->
+        <div class="card">
+            <div class="slideshow-container">
+                <img class="slide bigbow-slide" src="bigbow1.jpeg" alt="Big Bow 1">
+                
+            </div>
+            <h2>Big Bows</h2>
+            <p>Rs. 150 🎀</p>
+        </div>
+
+        <!-- Small Bows -->
+        <div class="card">
+            <div class="slideshow-container">
+                <img class="slide smallbow-slide" src="smallbow1.jpeg" alt="Small Bow 1">
+                <img class="slide smallbow-slide" src="smallbow2.jpeg" alt="Small Bow 2">
+                <img class="slide smallbow-slide" src="smallbow3.jpeg" alt="Small Bow 3">
+            </div>
+            <h2>Small Bows</h2>
+            <p>Rs. 100 🎀</p>
+        </div>
+
+        <!-- Scrunchies -->
+        <div class="card">
+            <div class="slideshow-container">
+                <img class="slide scrunchie-slide" src="scrunchie1.jpeg" alt="Scrunchie 1">
+                <img class="slide scrunchie-slide" src="scrunchie2.jpeg" alt="Scrunchie 2">
+                <img class="slide scrunchie-slide" src="scrunchie3.jpeg" alt="Scrunchie 3">
+            </div>
+            <h2>Scrunchies</h2>
+            <p>Rs. 100 💕</p>
+        </div>
+
+    </section>
+
+    <section class="contact">
+        <h2>Contact Us</h2>
+        <p>💌 DM to order | Limited Stock Available! 🛍️</p>
+        <p>#TrendyAccessories #OMISCreations #BowsAndScrunchies</p>
+
+        <!-- WhatsApp Button -->
+        <a href="https://wa.me/+94703824684" target="_blank" class="whatsapp-btn">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+            Chat with us on WhatsApp
+        </a>
+    </section>
+
+    <script>
+        function startSlideshow(className) {
+            let slides = document.getElementsByClassName(className);
+            let index = 0;
+
+            function showSlide() {
+                for (let i = 0; i < slides.length; i++) {
+                    slides[i].style.opacity = "0";
+                }
+                slides[index].style.opacity = "1";
+                index = (index + 1) % slides.length;
+            }
+
+            showSlide();
+            setInterval(showSlide, 2000); // Change image every 2 seconds
+        }
+
+        // Start slideshows for different product types
+        window.onload = function() {
+            startSlideshow("butterfly-slide");
+            startSlideshow("bigbow-slide");
+            startSlideshow("smallbow-slide");
+            startSlideshow("scrunchie-slide");
+        };
+    </script>
+
+</body>
+</html>
